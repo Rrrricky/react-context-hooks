@@ -5,7 +5,7 @@ class BookList extends React.Component {
     return (
       <div className="book-list">
         <ul>
-          <li>The LightHouse</li>
+          <li>The Lighthouse</li>
           <li>Harry Potter</li>
           <li>Hunger Games</li>
         </ul>
