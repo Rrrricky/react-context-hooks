@@ -19,10 +19,15 @@ class ThemeContextProvider extends React.Component {
       bg: '#555',
     }
   }
+  toggleTheme = () => {
+    // eslint-disable-next-line no-undef
+    this.setState({ isLightTheme: !this.state.isLightTheme })
+  }
   render() {
     return (
       // 4. Use Provider tag + specify data provided to components it wraps
-      <ThemeContext.Provider value={{...this.state}}>
+      // Pass the func as value
+      <ThemeContext.Provider value={{...this.state, toggleTheme: this.toggleTheme }}>
         {this.props.children}
       </ThemeContext.Provider>
     );
