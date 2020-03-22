@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NewSongForm from "./NewSongForm"
 
 const SongList = () => {
   // useState return 2 values (1 is the data + 1 is a func to change the data)
@@ -7,15 +8,16 @@ const SongList = () => {
     { title: 'Call from the inside', id: 2 },
     { title: 'Silence', id: 3},
   ])
-  const addSong = () => {
-    setSongs([...songs, { title: 'New song', id: Date.now() }])
+  const addSong = title => {
+    // Add this new state to the local state (songs)
+    setSongs([...songs, { title, id: Date.now() }])
   }
   return (
     <div className="song-list">
       <ul>
         {songs.map(el => <li key={el.id}>{el.title}</li>)}
       </ul>
-      <button onClick={addSong}>Add a song</button>
+      <NewSongForm addSong={addSong} />
     </div>
   )
 };
