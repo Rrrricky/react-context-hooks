@@ -25,7 +25,7 @@ class ThemeContextProvider extends React.Component {
   }
   render() {
     return (
-      // 4. Use Provider tag + specify data provided to components it wraps
+      // 4. Use Provider tag + specify data provided to components it wraps (in App.js)
       // Pass the func as value
       <ThemeContext.Provider value={{...this.state, toggleTheme: this.toggleTheme }}>
         {this.props.children}
